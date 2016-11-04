@@ -10,40 +10,25 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS_PATHS = srcs
-SRCS_NAMES = ft_putchar.c \
-			ft_putstr.c \
-			ft_strcmp.c \
-			ft_strlen.c \
-			ft_swap.c
-OBJS_PATHS = objs
-CPPFLAGS = -Iincludes
-LDFLAGS = -L
-LDLIBS = 
 NAME = libft.a
-CC = clang
-CFLAGS = -Werror -Wextra -Wall
-OBJS_NAMES = $(SRCS_NAMES:.c=.o)
-SRCS = $(addprefix $(SRCS_PATHS)/,$(SRCS_NAMES))
-OBJS = $(addprefix $(OBJS_PATHS)/,$(OBJS_NAMES))
-
-.PHONY: all, clean, fclean, re
+CC = gcc
+CFLAGS = -c -Wall -Wextra -Werror -Iincludes
+_SRCS = ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c ft_swap.c
+OBJS = $(_SRCS:.c=.o)
+SRCS = $(patsubst %, srcs/%, $(_SRCS)) 
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(LDFLAGS) $(LDLIBS) $^ -o $@
+$(NAME):
+	$(CC) $(CFLAGS) $(SRCS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
-$(OBJS_PATHS)%.o: $(SRCS_PATHS)%.c
-	@mkdir $(OBJS_PATHS) 2> /dev/null || true
-	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
-
-clean: 
-	rm -fv $(OBJS)
-	@rmdir $(OBJS_PATHS) 2> /dev/null || true
+clean:
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -fv $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
