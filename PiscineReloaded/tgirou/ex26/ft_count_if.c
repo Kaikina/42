@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 10:53:29 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/05 11:17:40 by tgirou           ###   ########.fr       */
+/*   Created: 2016/11/05 10:21:36 by tgirou            #+#    #+#             */
+/*   Updated: 2016/11/05 11:23:32 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
-
-void	ft_putstr(char *str)
+int		ft_count_if(char **tab, int (*f)(char *))
 {
-	int i;
+	int		r;
+	int		i;
 
 	i = 0;
-	while (*str)
-		ft_putchar(*str++);
+	r = 0;
+	while (tab[i] != '\0')
+	{
+		if (f(tab[i]) == 1)
+			r++;
+		i++;
+	}
+	return (r);
 }

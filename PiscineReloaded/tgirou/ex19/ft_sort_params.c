@@ -6,9 +6,20 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 12:21:15 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/03 12:49:24 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/05 11:55:56 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int		ft_putchar(char c);
+
+void	ft_swap(char **a, char **b)
+{
+	char	*tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
 
 int		ft_strcmp(char *s1, char *s2)
 {
@@ -29,22 +40,17 @@ void	ft_putstr(char *str)
 int		main(int argc, char *argv[])
 {
 	int		i;
-	int		j;
-	char	*tmp;
 
-	i = 0;
-	j = 0;
-	if (argc > 2)
+	i = 1;
+	while (i < argc - 1)
 	{
-		while (++i < argc - 1)
+		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
 		{
-			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
-			{
-				tmp = argv[i];
-				argv[i] = argv[i + 1];
-				argv[i + 1] = tmp;
-			}
+			ft_swap(&argv[i], &argv[i + 1]);
+			i = 1;
 		}
+		else
+			i++;
 	}
 	i = 1;
 	while (i < argc)
@@ -53,4 +59,5 @@ int		main(int argc, char *argv[])
 		ft_putchar('\n');
 		i++;
 	}
+	return (0);
 }

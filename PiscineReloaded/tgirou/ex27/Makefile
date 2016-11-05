@@ -6,14 +6,14 @@
 #    By: tgirou <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 15:18:41 by tgirou            #+#    #+#              #
-#    Updated: 2016/11/05 10:11:09 by tgirou           ###   ########.fr        #
+#    Updated: 2016/11/05 10:33:20 by tgirou           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = ft_display_file
 CC = gcc
 CFLAGS = -c -Wall -Wextra -Werror -Iincludes
-_SRCS = ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c
+_SRCS = ft_display_file.c 
 OBJS = $(_SRCS:.c=.o)
 SRCS = $(patsubst %, srcs/%, $(_SRCS)) 
 
@@ -21,8 +21,7 @@ all: $(NAME)
 
 $(NAME):
 	$(CC) $(CFLAGS) $(SRCS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	$(CC) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)

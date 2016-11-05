@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 10:53:29 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/05 11:17:40 by tgirou           ###   ########.fr       */
+/*   Created: 2016/11/05 10:19:49 by tgirou            #+#    #+#             */
+/*   Updated: 2016/11/05 11:21:32 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
-
-void	ft_putstr(char *str)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int i;
+	int		i;
 
 	i = 0;
-	while (*str)
-		ft_putchar(*str++);
+	while (i < length)
+	{
+		f(tab[i]);
+		i++;
+	}
 }
