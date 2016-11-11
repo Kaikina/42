@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/11 14:15:30 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 14:16:22 by tgirou           ###   ########.fr       */
+/*   Created: 2016/11/11 14:13:56 by tgirou            #+#    #+#             */
+/*   Updated: 2016/11/11 14:14:21 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdlib.h>
 
-char	*ft_strdup(char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	char	*str;
-	char	*p;
-	size_t	n;
+	char	*ret;
 
-	n = strlen(src);
-	str = (char *)malloc(sizeof(*str) * (n + 1));
-	p = str;
-	while (*src)
-		*p++ = *src++;
-	*p = '\0';
-	return (str);
+	ret = (char *)dest;
+	while (*dest++ = *src++)
+		;
+	return (ret);
 }

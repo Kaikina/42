@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/11 14:18:40 by tgirou            #+#    #+#             */
+/*   Updated: 2016/11/11 14:19:19 by tgirou           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 
-char    *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    char *ret;
+	char	*ret;
 
-    ret = 0;
-    while (*s)
-    {
-       if (*s == (char)c)
-            ret = s;
-        *s++;
-    }
-    return (ret);
+	ret = 0;
+	while (*s)
+	{
+		if (*s == (char)c)
+			ret = s;
+		*s++;
+	}
+	return (ret);
 }

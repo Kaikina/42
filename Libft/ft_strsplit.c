@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/11 14:15:30 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 14:16:22 by tgirou           ###   ########.fr       */
+/*   Created: 2016/11/11 16:48:12 by tgirou            #+#    #+#             */
+/*   Updated: 2016/11/11 17:01:14 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
-
-char	*ft_strdup(char *src)
+char	**ft_strsplit(char const *s, char c)
 {
-	char	*str;
-	char	*p;
-	size_t	n;
-
-	n = strlen(src);
-	str = (char *)malloc(sizeof(*str) * (n + 1));
-	p = str;
-	while (*src)
-		*p++ = *src++;
-	*p = '\0';
-	return (str);
+	
 }

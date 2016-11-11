@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/11 14:15:30 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 14:16:22 by tgirou           ###   ########.fr       */
+/*   Created: 2016/11/11 17:24:10 by tgirou            #+#    #+#             */
+/*   Updated: 2016/11/11 17:26:10 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(char *src)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	char	*p;
-	size_t	n;
+	long int	nbr;
 
-	n = strlen(src);
-	str = (char *)malloc(sizeof(*str) * (n + 1));
-	p = str;
-	while (*src)
-		*p++ = *src++;
-	*p = '\0';
-	return (str);
+	nbr = (long int)n;
+	if (nbr < 0)
+	{
+		ft_putchar_fd('-');
+		-nbr;
+	}
+	if (nbr > 9)
+		ft_putnbr_fd(nbr / 10);
+	ft_putchar_fd((nbr % 10) + '0');
 }

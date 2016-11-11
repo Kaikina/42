@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/08 11:13:03 by tgirou            #+#    #+#             */
+/*   Updated: 2016/11/08 12:15:51 by tgirou           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 
-void    *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-    char *str;
+	char *str;
 
-    str = NULL;
-    if (n)
-    {
-        str = s;
-        while (n-- > 0)
-        {
-            *str++ = c;
-        }
-    }
-    return (s);
+	str = NULL;
+	if (len)
+	{
+		str = b;
+		while (len-- > 0)
+		{
+			*str++ = c;
+		}
+	}
+	return (b);
 }
