@@ -6,16 +6,16 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 11:01:21 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/03 11:09:55 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/14 12:56:50 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		ft_strlen(char *s)
 {
 	int		i;
 
 	i = 0;
-	while (*str++)
+	while (*s++)
 		i++;
 	return (i);
 }

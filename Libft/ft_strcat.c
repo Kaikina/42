@@ -6,20 +6,15 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:11:56 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 14:45:55 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/14 13:32:05 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	char	*ret;
-
-	ret = (char *)dest;
-	while (*dest)
-		dest++;
-	while (*dest++ = *src++)
-		;
-	return (ret);
+	ft_strcpy(&s1[ft_strlen(s1)], s2);
+	return (s1);
 }

@@ -6,11 +6,13 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 17:18:52 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 17:19:56 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/14 11:23:59 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c, int fd)
+#include <unistd.h>
+
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

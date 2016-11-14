@@ -6,13 +6,14 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 11:13:18 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 11:37:55 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/14 11:53:54 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <strings.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	memset(s, '\0', n);
+	ft_memset(s, '\0', n);
 }

@@ -6,7 +6,7 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 11:11:43 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/05 15:41:26 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/14 15:13:15 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int		ft_strcmp(char *s1, char *s2)
 		s1++;
 		s2++;
 	}
-	return (*s1 - *s2);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

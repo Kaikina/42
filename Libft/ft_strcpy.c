@@ -6,18 +6,23 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:13:56 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 14:14:21 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/14 12:57:37 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	char	*ret;
+	int		i;
 
-	ret = (char *)dest;
-	while (*dest++ = *src++)
-		;
-	return (ret);
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }

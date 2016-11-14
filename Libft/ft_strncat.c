@@ -6,22 +6,22 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:16:37 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 14:17:13 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/14 12:59:32 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strncat(char *dest, const char *src, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	char	*ret;
 
-	ret = (char*)dest;
-	while (*dest)
-		dest++;
+	ret = (char*)s1;
+	while (*s1)
+		s1++;
 	while (n--)
-		if (!(*dest++ = *src++))
+		if (!(*s1++ = *s2++))
 			return (ret);
-	*dest = 0;
+	*s1 = 0;
 	return (ret);
 }

@@ -6,15 +6,13 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:07:01 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 14:44:22 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/14 15:18:05 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_isalpha(int c)
 {
-	if (c >= 65 && c <= 90)
-		return (1);
-	else if (c >= 97 && c <= 122)
-		return (2);
-	return (0);
+	return (ft_tolower(c) || ft_toupper(c));
 }
