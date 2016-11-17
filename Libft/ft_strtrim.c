@@ -6,7 +6,7 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 16:38:17 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/14 17:10:45 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/15 11:53:39 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static int	ft_is_blank(int c)
 {
-		return (c == ' ' || c == '\t' || c == '\n');
+	return (c == ' ' || c == '\t' || c == '\n');
 }
 
 char		*ft_strtrim(char const *s)
 {
-	unsigned int		i;
-	size_t	len;
-	char	*new;
+	unsigned int	i;
+	size_t			len;
+	char			*new;
 
 	if (!s)
 		return (NULL);

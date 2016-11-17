@@ -6,23 +6,23 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 14:10:28 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/11 14:11:41 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/11/15 11:14:27 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isprint(int c)
 {
 	if (c == 32)
-		return (64);
+		return (1);
 	else if ((c >= 33 && c <= 47) || (c >= 58 && c <= 64) ||
 			(c >= 91 && c <= 96) || (c >= 123 && c <= 126))
-		return (16);
+		return (1);
 	else if (c >= 48 && c <= 57)
-		return (4);
+		return (1);
 	else if (c >= 65 && c <= 90)
 		return (1);
 	else if (c >= 97 && c <= 122)
-		return (2);
+		return (1);
 	else
 		return (0);
 }

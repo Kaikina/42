@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tgirou <tgirou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/11 14:07:01 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/15 11:13:53 by tgirou           ###   ########.fr       */
+/*   Created: 2016/11/17 11:22:53 by tgirou            #+#    #+#             */
+/*   Updated: 2016/11/17 12:13:02 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-int		ft_isalpha(int c)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	else
-		return (0);
+	t_list	*newlst;
+
+	newlst = NULL;
+	if (lst)
+	{
+		if (!(newlst = f(lst)))
+			return (NULL);
+		newlst->next = ft_lstmap(lst->next, f);
+	}
+	return (newlst);
 }
