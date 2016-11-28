@@ -1,0 +1,1 @@
+curl http://linor.fr/temp/test_libft.tar.gz > test_libft.tar.gz && tar zxvf test_libft.tar.gz && rm test_libft.tar.gz
