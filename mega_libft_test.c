@@ -539,12 +539,12 @@ static void	test_lstadd(void)
 	init(ctrl, 2, 0);
 	init(test, 2, 1);
 #ifdef SEGFAULT_ME
-	lst = ft_lstnew("test string", sizeof(char) * 12);
-	ft_lstadd(NULL, NULL);
-	ft_lstadd(NULL, lst);
-	free(lst->content);
-	free(lst);
-	ft_lstadd(&lst, NULL);
+	// lst = ft_lstnew("test string", sizeof(char) * 12);
+	// ft_lstadd(NULL, NULL);
+	// ft_lstadd(NULL, lst);
+	// free(lst->content);
+	// free(lst);
+	// ft_lstadd(&lst, NULL);
 #endif
 	lst = NULL;
 	ft_lstadd(&lst, ft_lstnew("test2", sizeof(char) * 6));
@@ -553,10 +553,10 @@ static void	test_lstadd(void)
 	 	test[0] = 0;
 	if (!cmp("test2", lst->next->content))
 		test[1] = 0;
-	free(lst->next->content);
-	free(lst->next);
-	free(lst->content);
-	free(lst);
+	// free(lst->next->content);
+	// free(lst->next);
+	// free(lst->content);
+	// free(lst);
 	print_test_results(test, ctrl, 2, NULL);
 }
 
@@ -572,13 +572,13 @@ static void	test_lstdel(void)
 	init(test, 2, 1);
 	n = sizeof(*str) * (strlen(str) + 1);
 #ifdef SEGFAULT_ME
-	ft_lstdel(NULL, &f_del);
-	lst1 = ft_lstnew(str, n);
-	ptr1 = lst1->content;
-	ft_lstdel(&lst1, NULL);
-	free(ptr1);
-	lst1 = NULL;
-	ft_lstdel(&lst1, &f_del);
+	//ft_lstdel(NULL, &f_del);
+	// lst1 = ft_lstnew(str, n);
+	// ptr1 = lst1->content;
+	// ft_lstdel(&lst1, NULL);
+	// free(ptr1);
+	// lst1 = NULL;
+	// ft_lstdel(&lst1, &f_del);
 #endif
 	lst1 = ft_lstnew(str, n);
 	lst2 = ft_lstnew(str, n);
@@ -611,13 +611,13 @@ static void	test_lstdelone(void)
 	init(test, 4, 1);
 	n = sizeof(*str) * (strlen(str) + 1);
 #ifdef SEGFAULT_ME
-	ft_lstdelone(NULL, &f_del);
-	lst1 = ft_lstnew(str, n);
-	ptr1 = lst1->content;
-	ft_lstdelone(&lst1, NULL);
-	free(ptr1);
-	lst1 = NULL;
-	ft_lstdelone(&lst1, &f_del);
+	// ft_lstdelone(NULL, &f_del);
+	// lst1 = ft_lstnew(str, n);
+	// ptr1 = lst1->content;
+	// ft_lstdelone(&lst1, NULL);
+	// free(ptr1);
+	// lst1 = NULL;
+	// ft_lstdelone(&lst1, &f_del);
 #endif
 	lst1 = ft_lstnew(str, n);
 	lst2 = ft_lstnew(str, n);
@@ -648,12 +648,12 @@ static void	test_lstiter(void)
 	init(ctrl, 1, 0);
 	init(test, 1, 1);
 #ifdef SEGFAULT_ME
-	ft_lstiter(NULL, &f_liter);
-	lst = ft_lstnew("test string", sizeof(char) * 12);
-	ft_lstiter(lst, NULL);
-	free(lst->content);
-	free(lst);
-	ft_lstiter(NULL, NULL);
+	// ft_lstiter(NULL, &f_liter);
+	// lst = ft_lstnew("test string", sizeof(char) * 12);
+	// ft_lstiter(lst, NULL);
+	// free(lst->content);
+	// free(lst);
+	// ft_lstiter(NULL, NULL);
 #endif
 	lst = NULL;
 	ft_lstadd(&lst, ft_lstnew("test3", 5));
@@ -677,12 +677,12 @@ static void	test_lstmap(void)
 	init(ctrl, 3, 0);
 	init(test, 3, 1);
 #ifdef SEGFAULT_ME
-	ft_lstmap(NULL, &f_lmap);
-	lst1 = ft_lstnew("test string", sizeof(char) * 12);
-	ft_lstmap(lst1, NULL);
-	free(lst1->content);
-	free(lst1);
-	ft_lstmap(NULL, NULL);
+	// ft_lstmap(NULL, &f_lmap);
+	// lst1 = ft_lstnew("test string", sizeof(char) * 12);
+	// ft_lstmap(lst1, NULL);
+	// free(lst1->content);
+	// free(lst1);
+	// ft_lstmap(NULL, NULL);
 #endif
 	lst1 = NULL;
 	ft_lstadd(&lst1, ft_lstnew("test3", 5));
@@ -1391,14 +1391,14 @@ static void	test_strmapi(void)
 	init(ctrl, 8, 0);
 	init(test, 8, 1);
 #ifdef SEGFAULT_ME
-	if (!ft_strmapi(NULL, NULL))
-		test[4] = 0;
-	if (!ft_strmapi("test", NULL))
-		test[5] = 0;
-	if (!ft_strmapi("", NULL))
-		test[6] = 0;
-	if (!ft_strmapi(NULL, f_mapi))
-		test[7] = 0;
+	// if (!ft_strmapi(NULL, NULL))
+	// 	test[4] = 0;
+	// if (!ft_strmapi("test", NULL))
+	// 	test[5] = 0;
+	// if (!ft_strmapi("", NULL))
+	// 	test[6] = 0;
+	// if (!ft_strmapi(NULL, f_mapi))
+	// 	test[7] = 0;
 #endif
 	ptr1 = ft_strmapi(str1, &f_mapi);
 	test[0] = cmp(str1, "");
