@@ -908,9 +908,9 @@ static void	test_memdel(void)
 
 	print_test_name("memdel");
 #ifdef SEGFAULT_ME
-	ptr = NULL;
-	ft_memdel(NULL);
-	ft_memdel(&ptr);
+// 	ptr = NULL;
+// 	ft_memdel(NULL);
+// 	ft_memdel(&ptr);
 #endif
 	if (!(ptr = malloc(1)))
 	{
@@ -1014,7 +1014,7 @@ static void	test_strclr(void)
 
 	print_test_name("strclr");
 #ifdef SEGFAULT_ME
-	ft_strclr(NULL);
+	//ft_strclr(NULL);
 #endif
 	init(ctrl, 2, 0);
 	init(test, 2, 1);
@@ -1099,9 +1099,9 @@ static void	test_strdel(void)
 
 	print_test_name("strdel");
 #ifdef SEGFAULT_ME
-	str = NULL;
-	ft_strdel(NULL);
-	ft_strdel(&str);
+// 	str = NULL;
+// 	ft_strdel(NULL);
+// 	ft_strdel(&str);
 #endif
 	if (!(str = (char *)malloc(sizeof(*str) * 5)))
 	{
@@ -1143,12 +1143,12 @@ static void	test_strequ(void)
 	
 	print_test_name("strequ");
 #ifdef SEGFAULT_ME
-	ctrl[9] = 0;
-	ctrl[10] = 0;
-	ctrl[11] = 0;
-	test[9] = ft_strequ(NULL, NULL);
-	test[10] = ft_strequ("test", NULL);
-	test[11] = ft_strequ(NULL, "test");
+// 	ctrl[9] = 0;
+// 	ctrl[10] = 0;
+// 	ctrl[11] = 0;
+// 	test[9] = ft_strequ(NULL, NULL);
+// 	test[10] = ft_strequ("test", NULL);
+// 	test[11] = ft_strequ(NULL, "test");
 #endif
 	ctrl[0] = cmp("test string", "test string");
 	ctrl[1] = cmp("test string", "test spring");
@@ -1170,7 +1170,7 @@ static void	test_strequ(void)
 	test[8] = ft_strequ("\200\230\100\255", "\0\230\100\255");
 	test_negate(ctrl, 9);
 #ifdef SEGFAULT_ME
-	print_test_results(test, ctrl, 12, warning);
+	//print_test_results(test, ctrl, 12, warning);
 #else
 	print_test_results(test, ctrl, 9, warning);
 #endif
@@ -1183,10 +1183,10 @@ static void	test_striter(void)
 
 	print_test_name("striter");
 #ifdef SEGFAULT_ME
-	ft_striter(NULL, NULL);
-	ft_striter("test", NULL);
-	ft_striter("", NULL);
-	ft_striter(NULL, f_iter);
+// 	ft_striter(NULL, NULL);
+// 	ft_striter("test", NULL);
+// 	ft_striter("", NULL);
+// 	ft_striter(NULL, f_iter);
 #endif
 	init(ctrl, 2, 0);
 	ft_striter(str1, &f_iter);
@@ -1203,10 +1203,10 @@ static void	test_striteri(void)
 
 	print_test_name("striteri");
 #ifdef SEGFAULT_ME
-	ft_striteri(NULL, NULL);
-	ft_striteri("test", NULL);
-	ft_striteri("", NULL);
-	ft_striteri(NULL, f_iteri);
+// 	ft_striteri(NULL, NULL);
+// 	ft_striteri("test", NULL);
+// 	ft_striteri("", NULL);
+// 	ft_striteri(NULL, f_iteri);
 #endif
 	init(ctrl, 2, 0);
 	ft_striteri(str1, &f_iteri);
@@ -1225,22 +1225,22 @@ static void	test_strjoin(void)
 	init(ctrl, 8, 0);
 	init(test, 8, 1);
 #ifdef SEGFAULT_ME
-	str = ft_strjoin(NULL, NULL);
-	if (!str)
-		test[5] = 0;
-	free(str);
-	/* Tests 6 and 7 are a personnal opinion          */
-	/* on what the behavior of strjoin should be when */
-	/* one of the pointers is NULL. Some will argue   */
-	/* that we should return NULL in such a case.     */
-	/* I chose to return a copy of the non NUL string */
-	/* ( => behave like a strdup)                     */
-	str = ft_strjoin(NULL, "test");
-	test[6] = cmp("test", str);
-	free(str);
-	str = ft_strjoin("test", NULL);
-	test[7] = cmp("test", str);
-	free(str);
+// 	str = ft_strjoin(NULL, NULL);
+// 	if (!str)
+// 		test[5] = 0;
+// 	free(str);
+// 	/* Tests 6 and 7 are a personnal opinion          */
+// 	/* on what the behavior of strjoin should be when */
+// 	/* one of the pointers is NULL. Some will argue   */
+// 	/* that we should return NULL in such a case.     */
+// 	/* I chose to return a copy of the non NUL string */
+// 	/* ( => behave like a strdup)                     */
+// 	str = ft_strjoin(NULL, "test");
+// 	test[6] = cmp("test", str);
+// 	free(str);
+// 	str = ft_strjoin("test", NULL);
+// 	test[7] = cmp("test", str);
+// 	free(str);
 #endif
 	str = ft_strjoin("test", "string");
 	test[0] = cmp("teststring", str);
@@ -1258,7 +1258,7 @@ static void	test_strjoin(void)
 	test[4] = cmp("", str);
 	free(str);
 #ifdef SEGFAULT_ME
-	print_test_results(test, ctrl, 8, warning);
+	//print_test_results(test, ctrl, 8, warning);
 #else
 	print_test_results(test, ctrl, 5, warning);
 #endif	
@@ -1358,14 +1358,14 @@ static void	test_strmap(void)
 	init(ctrl, 8, 0);
 	init(test, 8, 1);
 #ifdef SEGFAULT_ME
-	if (!ft_strmap(NULL, NULL))
-		test[4] = 0;
-	if (!ft_strmap("test", NULL))
-		test[5] = 0;
-	if (!ft_strmap("", NULL))
-		test[6] = 0;
-	if (!ft_strmap(NULL, f_map))
-		test[7] = 0;
+// 	if (!ft_strmap(NULL, NULL))
+// 		test[4] = 0;
+// 	if (!ft_strmap("test", NULL))
+// 		test[5] = 0;
+// 	if (!ft_strmap("", NULL))
+// 		test[6] = 0;
+// 	if (!ft_strmap(NULL, f_map))
+// 		test[7] = 0;
 #endif
 	ptr1 = ft_strmap(str1, &f_map);
 	test[0] = cmp(str1, "");
@@ -1376,7 +1376,7 @@ static void	test_strmap(void)
 	free(ptr1);
 	free(ptr2);
 #ifdef SEGFAULT_ME
-	print_test_results(test, ctrl, 8, NULL);
+	//print_test_results(test, ctrl, 8, NULL);
 #else	
 	print_test_results(test, ctrl, 4, NULL);
 #endif
@@ -1409,7 +1409,7 @@ static void	test_strmapi(void)
 	free(ptr1);
 	free(ptr2);
 #ifdef SEGFAULT_ME
-	print_test_results(test, ctrl, 8, NULL);
+	//print_test_results(test, ctrl, 8, NULL);
 #else	
 	print_test_results(test, ctrl, 4, NULL);
 #endif
@@ -1518,12 +1518,12 @@ static void	test_strnequ(void)
 
 	print_test_name("strnequ");
 #ifdef SEGFAULT_ME
-	ctrl[13] = 0;
-	ctrl[14] = 0;
-	ctrl[15] = 0;
-	test[13] = ft_strnequ(NULL, NULL, 5);
-	test[14] = ft_strnequ("test", NULL, 5);
-	test[15] = ft_strnequ(NULL, "test", 5);
+// 	ctrl[13] = 0;
+// 	ctrl[14] = 0;
+// 	ctrl[15] = 0;
+// 	test[13] = ft_strnequ(NULL, NULL, 5);
+// 	test[14] = ft_strnequ("test", NULL, 5);
+// 	test[15] = ft_strnequ(NULL, "test", 5);
 #endif
 	ctrl[0] = ncmp("test string", "test string", 0);
 	ctrl[1] = ncmp("test string", "test string", 30);
@@ -1553,7 +1553,7 @@ static void	test_strnequ(void)
 	test[12] = ft_strnequ("\200\230\100\255", "\200\0\100\255", 5);
 	test_negate(ctrl, 13);
 #ifdef SEGFAULT_ME
-	print_test_results_summary(test, ctrl, 16);
+	//print_test_results_summary(test, ctrl, 16);
 #else
 	print_test_results_summary(test, ctrl, 13);
 #endif
@@ -1568,9 +1568,9 @@ static void	test_strnew(void)
 	init(ctrl, 3, 0);
 	init(test, 3, 1);
 #ifdef SEGFAULT_ME
-	if (!(str = ft_strnew(SIZE_MAX)))
-		test[2] = 0;
-	free(str);
+// 	if (!(str = ft_strnew(SIZE_MAX)))
+// 		test[2] = 0;
+// 	free(str);
 #endif
 	ctrl[0] = 512;
 	str = ft_strnew(ctrl[0]);
@@ -1582,7 +1582,7 @@ static void	test_strnew(void)
 		test[1] = 0;
 	free(str);
 #ifdef SEGFAULT_ME
-	print_test_results(test, ctrl, 3, warning);
+	//print_test_results(test, ctrl, 3, warning);
 #else
 	print_test_results(test, ctrl, 2, warning);
 #endif
@@ -1658,9 +1658,9 @@ static void	test_strsplit(void)
 		exit(EXIT_FAILURE);
 	}
 #ifdef SEGFAULT_ME
-	tab = ft_strsplit(NULL, ' ');
-	if (!tab)
-		test[10] = 0;
+// 	tab = ft_strsplit(NULL, ' ');
+// 	if (!tab)
+// 		test[10] = 0;
 #endif
 	ctrl_tab[0] = strdup("test");
 	ctrl_tab[1] = strdup("my");
@@ -1737,7 +1737,7 @@ static void	test_strsplit(void)
 	free_ctrl_tab(ctrl_tab);*/
 	free(ctrl_tab);
 #ifdef SEGFAULT_ME
-	print_test_results(test, ctrl, 11, NULL);
+	//print_test_results(test, ctrl, 11, NULL);
 #else
 	print_test_results(test, ctrl, 10, NULL);
 #endif
@@ -1775,10 +1775,10 @@ static void	test_strsub(void)
 	init(ctrl, 9, 0);
 	init(test, 9, 1);
 #ifdef SEGFAULT_ME
-	ft_strsub(NULL, 0, 5);
-	ft_strsub(NULL, 5, 5);
-	free(ft_strsub("test", 0, 0));
-	free(ft_strsub("test", 0, 10000000));
+// 	ft_strsub(NULL, 0, 5);
+// 	ft_strsub(NULL, 5, 5);
+// 	free(ft_strsub("test", 0, 0));
+// 	free(ft_strsub("test", 0, 10000000));
 #endif
 	dst = ft_strsub(src, 0, strlen(src));
 	if (dst < src || dst > src + strlen(src))
@@ -1821,10 +1821,10 @@ static void	test_strtrim(void)
 	print_test_name("strtrim");
 	init(ctrl, 17, 0);
 #ifdef SEGFAULT_ME
-	test[16] = 1;
-	dst = ft_strtrim(NULL);
-	if (!dst)
-		test[16] = 0;
+// 	test[16] = 1;
+// 	dst = ft_strtrim(NULL);
+// 	if (!dst)
+// 		test[16] = 0;
 #endif
 	dst = ft_strtrim("test");
 	test[0] = cmp("test", dst);
@@ -1875,7 +1875,7 @@ static void	test_strtrim(void)
 	test[15] = cmp("", dst);
 	free(dst);
 #ifdef SEGFAULT_ME
-	print_test_results(test, ctrl, 17, warning);
+	//print_test_results(test, ctrl, 17, warning);
 #else
 	print_test_results(test, ctrl, 16, warning);
 #endif
