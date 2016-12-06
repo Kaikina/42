@@ -6,7 +6,7 @@
 /*   By: tgirou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 10:33:47 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/17 12:52:46 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/12/06 07:18:39 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <string.h>
 
+void				ft_printmatrice(char **tab);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);

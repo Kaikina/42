@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_printmatrice.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgirou <tgirou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 11:09:16 by tgirou            #+#    #+#             */
-/*   Updated: 2016/12/01 12:23:53 by tgirou           ###   ########.fr       */
+/*   Created: 2016/12/06 07:14:19 by tgirou            #+#    #+#             */
+/*   Updated: 2016/12/06 07:19:36 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_printmatrice(char **tab)
 {
-	if (alst)
+	int	i;
+	int	j;
+
+	i = 0;
+	while (tab[i])
 	{
-		ft_lstdel(&((*alst)->next), del);
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = NULL;
+		j = 0;
+		while (tab[i][j])
+		{
+			ft_putchar(tab[i][j]);
+			j++;
+		}
+		ft_putchar('\n');
+		i++;
 	}
 }

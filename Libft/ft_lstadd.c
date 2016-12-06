@@ -6,7 +6,7 @@
 /*   By: tgirou <tgirou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 11:40:09 by tgirou            #+#    #+#             */
-/*   Updated: 2016/11/17 12:26:39 by tgirou           ###   ########.fr       */
+/*   Updated: 2016/12/01 12:13:58 by tgirou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	new->next = *alst;
-	*alst = new;
+	if (alst && new)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }
